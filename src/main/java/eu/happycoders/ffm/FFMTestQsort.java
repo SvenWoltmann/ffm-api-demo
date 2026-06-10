@@ -54,7 +54,7 @@ public class FFMTestQsort {
       int[] unsorted = createUnsortedArray();
       MemorySegment arrayAddress = offHeap.allocateFrom(ValueLayout.JAVA_INT, unsorted);
 
-      // 10. Allocate off-head memory for an "upcall stub" to the Java comparison function
+      // 10. Allocate off-heap memory for an "upcall stub" to the Java comparison function
       MemorySegment compareAddress = linker.upcallStub(compareHandle, compareDescriptor, offHeap);
 
       // 11. Invoke the qsort function
