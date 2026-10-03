@@ -22,7 +22,7 @@ public class FFMTestQsort {
     SymbolLookup stdlib = linker.defaultLookup();
 
     // 3. Get the address of the "qsort" function in the C standard library
-    MemorySegment qsortAddress = stdlib.find("qsort").orElseThrow();
+    MemorySegment qsortAddress = stdlib.findOrThrow("qsort");
 
     // 4. Define the input and output parameters of the "qsort" function:
     // - Pointer to the array to sort

@@ -17,7 +17,7 @@ public class FFMTestStrlen {
     SymbolLookup stdlib = linker.defaultLookup();
 
     // 3. Get the address of the "strlen" function in the C standard library
-    MemorySegment strlenAddress = stdlib.find("strlen").orElseThrow();
+    MemorySegment strlenAddress = stdlib.findOrThrow("strlen");
 
     // 4. Define the input and output parameters of the "strlen" function
     FunctionDescriptor descriptor =
